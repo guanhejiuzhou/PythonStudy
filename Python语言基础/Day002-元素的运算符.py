@@ -40,3 +40,48 @@ b = 3
 a += b  # 相当于：a=a+b
 a *= a + 2  # 相当于：a=a*(a+2)
 print(a)  # a += b的值为a=13,a *= a+2的值为13*(13+2)=195
+
+# ======================= 比较运算符和逻辑运算符 ====================
+# 比较运算符的优先级高于赋值运算符
+flag0 = 1 == 1
+flag1 = 3 > 1
+flag2 = 2 < 1
+flag3 = flag1 and flag2
+flag4 = flag1 or flag2
+flag5 = not (1 != 2)
+print("flag0 =", flag0)
+print("flag1 =", flag1)
+print("flag2 =", flag2)
+print("flag3 =", flag3)
+print("flag4 =", flag4)
+print("flag5 =", flag5)
+
+# ================================ 运算符例子 ==========================
+"""
+将华氏温度转换为摄氏温度
+华氏温度转换摄氏温度公式为：C=(F-32)/1.8
+"""
+f = float(input("请输入华氏温度："))
+c = (f - 32) / 1.8
+# print函数输出时，可以对字符串内容进行格式化，%.1f是一个占位符，会由一个float类型的变量值替换
+# 同理，如果字符串中有%d，可以用一个int类型的变量值替换；%s会被字符串的值替换
+print("%.1f华氏度 = %.1f摄氏度" % (f, c))
+
+
+"""
+输入半径，计算圆的周长和面积
+"""
+radius = float(input("请输入圆的半径："))
+perimeter = 2 * 3.1416 * radius
+area = 3.1416 * radius * radius
+# %.xf x表示显示小数点后几位
+print("周长：%.4f" % perimeter)
+print("面积：%.2f" % area)
+
+
+"""
+输入年份，判断是不是闰年
+"""
+year = int(input("请输入年份："))
+is_leap = year % 4 == 0 and year % 100 != 0 or year % 400 == 0
+print(is_leap)
