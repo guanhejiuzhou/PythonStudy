@@ -109,6 +109,69 @@ for face in range(1, 7):
     print(f'{face}点出现了{counters[face - 1]}次')
 
 ''' ========== 列表的方法 ========== '''
+
 list3 = ['python', 'java', 'Go', 'C++']
+
 # 使用append方法在列表尾部添加元素
+
+list3.append('PHP')
+print(list3)  # ['python', 'java', 'Go', 'C++', 'PHP']
+# 使用insert方法在列表指定索引位置插入元素
+list3.insert(2, 'SQL')
+print(list3)  # ['python', 'java', 'SQL', 'Go', 'C++', 'PHP']
+# 删除指定元素
+list3.remove('C++')
+print(list3)  # ['python', 'java', 'SQL', 'Go', 'PHP']
+# 删除指定索引位置的元素
+list3.pop(0)
+list3.pop(len(list3) - 1)
+print(list3)  # ['java', 'SQL', 'Go']
+# 清空列表中的元素
+list3.clear()
+print(list3)
+
+list4 = ['python', 'java', 'java', 'PHP', 'SQL', 'python']
+# 查找元素的索引位置
+print(list4.index('python'))  # 0
+print(list4.index('python', 2))  # 5
+# 查找元素出现的次数
+print(list4.count('python'))  # 2
+print(list4.count('PHP'))  # 1
+# 排序
+list4.sort()
+print(list4)  # ['PHP', 'SQL', 'java', 'java', 'python', 'python']
+# 反转
+list4.reverse()
+print(list4)  # ['python', 'python', 'java', 'java', 'SQL', 'PHP']
+
+''' ========== 列表的生成式 ========== '''
+# 通过for循环为空列表添加元素
+# 创建一个由1到9的数字构建的列表
+l1 = []
+for i in range(1, 10):
+    l1.append(i)
+print(l1)  # [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# 创建一个由'hello world'中除空格和元音字母外的字符构成的列表
+l2 = []
+for x in 'hello world':
+    if x not in ' aeiou':
+        l2.append(x)
+print(l2)  # ['h', 'l', 'l', 'w', 'r', 'l', 'd']
+# 创建一个由两个字符串中字符的笛卡尔积构成的列表
+l3 = []
+for x in 'ABC':
+    for y in '12':
+        l3.append(x + y)
+print(l3)  # ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
+
+''' 通过生成式创建列表 '''
+# 创建一个由1到9的数字构成的列表
+n1 = [x for x in range(1, 10)]
+print(n1)  # [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# 创建一个由'hello world'中除空格和元音字母外的字符构成的列表
+n2 = [x for x in 'hello world' if x not in ' aeiou']
+print(n2)  # ['h', 'l', 'l', 'w', 'r', 'l', 'd']
+# 创建一个由两个字符串中字符的笛卡尔积构成的列表
+n3 = [x + y for x in 'ABC' for y in '12']
+print(n3)  # ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
 
