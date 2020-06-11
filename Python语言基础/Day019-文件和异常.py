@@ -194,10 +194,11 @@ loads--将字符串的内容反序列化成python对象
 
 
 def main():
-    resp = requests.get('http://api.tianapi.com/guonei/?key=APIKey&num=10')
+    resp = requests.get('https://v1.jinrishici.com/all.json')
     data_model = json.loads(resp.text)
-    for news in data_model['newslist']:
-        print(news['title'])
+    print(data_model)
+    for news in data_model:
+        print(news)
 
 
 if __name__ == '__main__':
